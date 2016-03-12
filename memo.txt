@@ -1,8 +1,0 @@
-1, scala highlight vim plugin
-scalaコードのシンタックスハイライトがvimでもできます。
-https://github.com/derekwyatt/vim-scala
-
-2, vim Vundle install
-http://www.kuqin.com/shuoit/20160112/349997.html
-
-3,
