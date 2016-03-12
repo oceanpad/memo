@@ -1,0 +1,59 @@
+1,Move DataUtil's code to DataUtils
+2,Move DataUtil's Test  code to DataUtils' Test code
+3,merge the Same part(Code write method) 
+
+4,new task : featyre #3369 #3370
+	
+getLatestKartePhoto メソッド実装 (Assigned)
+karte_assetsテーブルにphoto_typeを追加 (Assigned)
+
+
+
+
+
+one----->>>>>>>>>
+question 1:how to drop a table that have a foreign key
+
+SET FOREIGN_KEY_CHECKS=0;
+drop table karte_assets;
+SET FOREIGN_KEY_CHECKS=1;
+
+
+ create table karte_assets (
+  karte_asset_id  bigint auto_increment not null,
+  karte_id        bigint not null,
+  asset_type      tinyint not null,
+  photo_type      tinyint not null,
+  url             varchar(1024) not null,
+  created_at      timestamp not null default current_timestamp,
+  updated_at      timestamp not null default current_timestamp on update current_timestamp,
+  constraint pk_karte_assets primary key (karte_asset_id),
+  constraint fk_karte_assets_karte foreign key(karte_id) references kartes (karte_id)
+);
+
+two----->>>>>>>>>
+ sudo tail -f /tmp/mysql.log
+ desc karte_assets
+ create dtabase kanri2 character set utf8
+
+   "getLatestKarteAsset Test" should {
+  	trait LocalFixture extends FixtureRollback{
+    	override def fixture(implicit session: DBSession) {
+  		        super.fixture(session)
+        sql""" 
+	  			insert into karte_assets(
+						karte_asset_id, karte_id, asset_type, photo_type, url, created_at, updated_at
+					) values(
+						106, 4, 2, 3, 'url_e', '2016-02-19 00:00:00', '2016-02-19 00:00:00'
+					)
+        """.update.apply()
+  		}
+  	}
+	 "getLatestKarteAsset no photo_type>=20 and not have 1 Test" in new LocalFixture{
+
+      val karteAsset:KarteAsset = new CustomerService().getLatestKarteAsset(3).get
+			karteAsset.karteAssetId mustEqual Some(106)
+			karteAsset.url mustEqual "url_e"
+    	karteAsset.photoType mustEqual 3
+    }
+  }

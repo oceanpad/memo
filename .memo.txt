@@ -1,0 +1,29 @@
+1,
+REPL:read eval print loop
+Option[Int].isDefined
+Option[Int].isEmpty
+Option[Int].filter
+Option[Int].map
+Option[Int].get
+Option[Int].getOrElse
+
+2,
+String ++ StringOps
+
+3,
+Int ++ RichInt ++ BigInt ++ BigDecimal eg.(1 to 10  >>>>range(1,2,3...10))
+Double ++ RichDouble 
+Char ++ RichChar
+
+
+4,
+
+taff_id=1が担当したことのあるカスタマー
+SELECT DISTINCT A.customer_id, B.staff_id FROM customers as A inner join (SELECT*FROM kartes where staff_id = 1) as B on A.customer_id = B.customer_id;
+
+カルテを最大の来店日でまとめて、staff_idを指定
+SELECT karte_id, customer_id, staff_id, MAX(came_at) FROM kartes where staff_id = 1 GROUP BY customer_id;
+
+上記のカスタマーを取得(最後の担当者検索)
+SELECT*FROM customers as A inner join (SELECT karte_id, customer_id, staff_id, MAX(came_at) FROM kartes where staff_id = 1 GROUP BY customer_id) as B on A.customer_id = B.customer_id;
+
