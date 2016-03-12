@@ -14,6 +14,9 @@ There hava a good teacher Mr kobayashi, So it's my all life chance, So I had to 
 
 ..............................................................................
 
+From now on ,I begin to use Vim to write my all code.(2016-03-12)
+
+..............................................................................
 The following is scala vim plugin.:::::::::::::::::
 1,
 #scala highlight vim plugin
@@ -21,7 +24,7 @@ The following is scala vim plugin.:::::::::::::::::
 https://github.com/derekwyatt/vim-scala
 
 2,
-#vim Vundle install
+#vim Vundle install and use tutorial
 http://www.kuqin.com/shuoit/20160112/349997.html
 
 ..............................................................................
