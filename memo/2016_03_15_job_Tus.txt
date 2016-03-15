@@ -1,0 +1,35 @@
+staffGetについて
+* shop.visiblity=false に属するスタッフは取得しない。
+* invalidated_at が過去日のデータは取得しない。未来日orNullのデータは取得する
+* work_ended_at が過去日のデータは取得しない。未来日orNullのデータは取得する
+
+invalidated_atについては、Model側の標準の動作で取得しないようになっていたはずなので、以下を参照してください。
+https://development.ikina.asia/redmine/projects/ikina-v2-project/wiki/Model関連#コンパニオンオブジェクト
+その上で、問題がどこにあるのかを見つけてから、適切な対処をしてください。
+
+* 実装したら "stub"のコメントを消しておいて下さい。
+
+
+
+
+1,
+#add git branch 
+git checkout -b branchName
+
+2,
+#show all branchs
+git branch
+
+3,
+#change branch
+git checkout branchName
+
+4,
+#merge branch
+git merge branchName
+
+5,
+#delete branch 
+git branch -d branchName
+
+Target Silicon Valley

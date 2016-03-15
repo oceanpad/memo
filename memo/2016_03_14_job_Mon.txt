@@ -1,0 +1,14 @@
+occupationのenumはこの先変わる予定がある。このテストの書き方だと、その度に修正しなければならない。
+ただデータが変わることだけが理由のテスト修正は、そのテストが対象としているメソッドのロジックとはあまり関係がないので、面倒なだけの作業となることが多く、なるべく減らしたい。
+若干、ケースバイケースの話にはなりますが、JSON周りのテストに関しては、多少テストケースの内容は緩めでもよいので、変更の影響を直ちに受けすぎないようにしてください。(それでテストが不十分すぎなければ）
+例えば、Occupationのidをenumから全て取得しソートして、結果のJSONのデータが、前方から順にoccupation_id = n(nはOccupationから得た値)であることを確認するなど。nameも同様。
+
+
+
+1, 
+occupation Get Api test part not enough, modify test part.
+2,
+This week is task(3.14~3.18):
+>>1: staff Get Api
+>>2: shop Get Api
+>>3: Customer/:id/note Get Api
