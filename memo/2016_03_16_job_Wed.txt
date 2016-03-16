@@ -1,0 +1,8 @@
+git 
+
+at first ,git branch add and commit ,then you can change to another branch.
+
+
+
+
+
