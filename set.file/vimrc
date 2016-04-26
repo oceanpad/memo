@@ -1,5 +1,6 @@
 runtime! debian.vim
 if has("syntax")
+	colo slate "set vim scheme(theme)
   syntax on 
   set tabstop=2
   set softtabstop=2
